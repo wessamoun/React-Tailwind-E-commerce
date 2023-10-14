@@ -7,8 +7,6 @@ function AddToCartAlert() {
   const alertDiv = useRef();
   useEffect(() => {
     if (alert > 0) {
-      console.log(alert);
-      console.log(alertType);
       alertDiv.current.classList.add("opacity-100");
       alertDiv.current.classList.remove("opacity-0");
       setTimeout(() => {

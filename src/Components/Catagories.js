@@ -6,7 +6,6 @@ import { fetchProducts } from "../redux/productsSlice";
 function Catagories() {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
-  // const categorized = useSelector((state) => state.products.categorized)
   const api = "https://dummyjson.com/products/categories";
   useEffect(() => {
     dispatch(fetchCategories(api));
@@ -17,12 +16,10 @@ function Catagories() {
       category.classList.remove("border-orange-600");
     })
     e.target.classList.add("border-orange-600");
-    // dispatch(fetchProducts(`https://dummyjson.com/products/category/${e.target.innerHTML}`))
     if (e.target.innerHTML === "all") {
       dispatch(fetchProducts(`https://dummyjson.com/products?limit=0`))
     } else {
       dispatch(fetchProducts(`https://dummyjson.com/products/category/${e.target.innerHTML}`))
-      // dispatch(changeCategorized())
     }
   }
   return (

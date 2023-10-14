@@ -25,7 +25,6 @@ export const categoriesSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
       state.categories = (action.payload)
-      // state.categories = (action.payload.filter((category) => !category.includes("men") && !category.includes("top")))
     })
   },
 })

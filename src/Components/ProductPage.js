@@ -18,7 +18,6 @@ function ProductPage() {
   const products = useSelector((state) => state.products.products);
   const product = products.find((product) => product.id === +id);
   const categoryProducts = products.filter(products => products.category === product.category);
-  console.log(categoryProducts);
   const images = [
     "https://placehold.co/600x400?text=Image One",
     "https://placehold.co/600x400?text=Image Two",

@@ -26,7 +26,6 @@ const Nav = () => {
       searchInput.current.classList.remove("w-56");
       searchInput.current.classList.add("w-0");
       searchInput.current.classList.remove("p-2");
-      console.log("searchInput.current");
     }
   });
 }

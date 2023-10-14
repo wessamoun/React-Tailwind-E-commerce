@@ -23,7 +23,6 @@ export const productsSlice = createSlice({
   reducers: {
     searchProducts: (state, action) => {
       state.search = action.payload;
-      console.log(action.payload);
     },
     sortProducts: (state, action) => {
       switch (action.payload) {
@@ -40,15 +39,12 @@ export const productsSlice = createSlice({
           state.products.sort((a, b) => b.price - a.price);
           break;
         default:
-        // code block
       }
     },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.products = action.payload;
-      // state.products = (action.payload.filter((product) => !product.category.includes("men") && !product.category.includes("top")))
-      // state.products.push(...action.payload.filter((product) => !product.category.includes("men") && !product.category.includes("top")))
     });
   },
 });
